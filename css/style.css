@@ -1,0 +1,74 @@
+body {
+  width: 300px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+}
+
+#add-language {
+  padding: 4px 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#add-language:hover {
+  background-color: #45a049;
+}
+
+#snippet-input button {
+  padding: 4px 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#snippet-input button:hover {
+  background-color: #45a049;
+}
+
+.copy-button,
+#add-snippet {
+  padding: 4px 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.delete-button {
+  padding: 4px 10px;
+  background-color: #8f2c02ee;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+#delete-language {
+  padding: 4px 10px;
+  margin: 4px 10px;
+  background-color: #8f2c02ee;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+#delete-language:hover {
+  background-color: #ef0f0fea;
+}
+
+.copy-button:hover,
+.delete-button:hover,
+#add-snippet:hover {
+  background-color: #45a049;
+}

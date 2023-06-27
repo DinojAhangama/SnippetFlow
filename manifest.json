@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "Code Snippets Manager",
+    "version": "1.0",
+    "description": "Store and manage frequently used code snippets.",
+    "icons": {
+      "128": "img/icon.png"
+    },
+    "action": {
+      "default_popup": "index.html",
+      "default_icon": {
+        "128": "img/icon.png"
+      }
+    },
+    "permissions": [
+      "clipboardWrite",
+      "storage"
+    ],
+    "host_permissions": [
+      "http://*/*",
+      "https://*/*"
+    ]
+  }
+  
