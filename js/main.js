@@ -1,4 +1,5 @@
 var languageSelect = document.getElementById('language');
+var languageSelectForDelete = document.getElementById('delete-language-select');
 var newLanguageInput = document.getElementById('new-language');
 var addLanguageButton = document.getElementById('add-language');
 var deleteLanguageButton = document.getElementById('delete-language');
@@ -18,7 +19,7 @@ addLanguageButton.addEventListener('click', function() {
 });
 
 deleteLanguageButton.addEventListener('click', function() {
-  var selectedLanguage = languageSelect.value;
+  var selectedLanguage = languageSelectForDelete.value;
   if (selectedLanguage !== '') {
     deleteLanguage(selectedLanguage);
   }
@@ -104,6 +105,7 @@ function saveSnippets(snippets) {
 
 function renderLanguages(languages) {
   languageSelect.innerHTML = '';
+  languageSelectForDelete.innerHTML = '';
   
   var defaultOption = document.createElement('option');
   defaultOption.value = '';
@@ -112,11 +114,19 @@ function renderLanguages(languages) {
   defaultOption.textContent = 'Select language';
   languageSelect.appendChild(defaultOption);
 
+  var defaultOptionForDelete = document.createElement('option');
+  defaultOptionForDelete.value = '';
+  defaultOptionForDelete.disabled = true;
+  defaultOptionForDelete.selected = true;
+  defaultOptionForDelete.textContent = 'Select language';
+  languageSelectForDelete.appendChild(defaultOptionForDelete);
+
   languages.forEach(function(language) {
     var option = document.createElement('option');
     option.value = language;
     option.textContent = language;
     languageSelect.appendChild(option);
+    languageSelectForDelete.appendChild(option.cloneNode(true));
   });
 }
 
@@ -134,6 +144,7 @@ function renderSnippets(snippets) {
       snippets[language].forEach(function(snippetText, index) {
         var snippetItem = document.createElement('li');
         snippetItem.textContent = snippetText;
+        snippetItem.classList.add("snippet-item");
 
         var buttonGroup = document.createElement('div');
         buttonGroup.classList.add('button-group');

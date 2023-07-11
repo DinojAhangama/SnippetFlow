@@ -6,22 +6,31 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-  <div>
-    <label for="language">Language:</label>
-    <select id="language"></select>
-    <input type="text" id="new-language" placeholder="Add new language">
-    <button id="add-language">Add</button>
-    <button id="delete-language">Delete</button>
+  <h1 class="title">Code Snippets</h1>
+  <div class="container">
+    <div class="form-container">
+      <div class="column">
+      <input type="text" id="new-language" class="input" placeholder="Add new language">
+      <select id="delete-language-select" class="select"></select>
+    </div>
+      <div class="column">
+      <button id="add-language" class="button">Add</button>
+      <button id="delete-language" class="button">Delete</button>
+    </div>
+    </div>
   </div>
 
-  <div>
-    <textarea id="snippet-text" placeholder="Enter your code snippet"></textarea>
-    <button id="add-snippet">Add Snippet</button>
+  <div class="container">
+    <select id="language" class="select"></select>
+    <textarea id="snippet-text" class="textarea" placeholder="Enter your code snippet"></textarea>
+    <div class="add-snippet-button-container"></div>
+      <button id="add-snippet" class="button">Add Snippet</button>
+    </div>   
   </div>
 
-  <div id="snippetsList"></div>
+  <div class="container" id="snippetsList"></div>
 
-  <p>
+  <p class="footer">
     Code icons created by
     <a href="https://www.flaticon.com/free-icons/code" title="code icons">Freepik - Flaticon</a>
   </p>
