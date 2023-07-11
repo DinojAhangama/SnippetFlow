@@ -58,13 +58,25 @@ function addLanguage(language) {
 }
 
 function deleteLanguage(language) {
-  chrome.storage.sync.get('languages', function(data) {
+  chrome.storage.sync.get(['languages', 'snippets'], function(data) {
     var languages = data.languages || [];
+    var snippets = data.snippets || {};
+
     var index = languages.indexOf(language);
     if (index !== -1) {
+      if (snippets[language] && snippets[language].length > 0) {
+        var confirmMessage = "Deleting this language will also delete all associated snippets. Are you sure you want to proceed?";
+        if (!window.confirm(confirmMessage)) {
+          return;
+        }
+      }
+      
       languages.splice(index, 1);
+      delete snippets[language];
       saveLanguages(languages);
+      saveSnippets(snippets);
       renderLanguages(languages);
+      renderSnippets(snippets);
     }
   });
 }
