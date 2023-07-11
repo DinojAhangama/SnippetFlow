@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Code Snippets</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+  <h1 class="title">Code Snippets</h1>
+  <div class="container">
+    <div class="form-container">
+      <div class="column">
+      <input type="text" id="new-language" class="input" placeholder="Add new language">
+      <select id="delete-language-select" class="select"></select>
+    </div>
+      <div class="column">
+      <button id="add-language" class="button">Add</button>
+      <button id="delete-language" class="button">Delete</button>
+    </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <select id="language" class="select"></select>
+    <textarea id="snippet-text" class="textarea" placeholder="Enter your code snippet"></textarea>
+    <div class="add-snippet-button-container"></div>
+      <button id="add-snippet" class="button">Add Snippet</button>
+    </div>   
+  </div>
+
+  <div class="container" id="snippetsList"></div>
+
+  <p class="footer">
+    Code icons created by
+    <a href="https://www.flaticon.com/free-icons/code" title="code icons">Freepik - Flaticon</a>
+  </p>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
